@@ -22,7 +22,7 @@ COPY patches ./patches
 RUN --mount=type=cache,id=openclaw-pnpm-store,target=/root/.local/share/pnpm/store,sharing=locked \
     pnpm install --frozen-lockfile
 
-COPY tsconfig.json tsconfig.plugin-sdk.dts.json tsdown.config.ts vitest.config.ts vitest.e2e.config.ts vitest.unit.config.ts vitest.channels.config.ts vitest.extensions.config.ts vitest.gateway.config.ts vitest.live.config.ts vitest.scoped-config.ts openclaw.mjs ./
+COPY tsconfig.json tsconfig.plugin-sdk.dts.json tsdown.config.ts vitest.config.ts vitest.e2e.config.ts vitest.unit.config.ts vitest.channels.config.ts vitest.extensions.config.ts vitest.gateway.config.ts vitest.live.config.ts vitest.scoped-config.ts openclaw.mjs docker-setup.sh docker-compose.yml ./
 COPY src ./src
 COPY test ./test
 COPY scripts ./scripts

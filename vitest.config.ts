@@ -67,6 +67,8 @@ export default defineConfig({
         replacement: path.join(repoRoot, "src", "plugin-sdk", "index.ts"),
       },
     ],
+    // Allow .js imports to resolve to .ts files (for ESM compatibility in built output)
+    extensions: [".ts", ".js"],
   },
   test: {
     testTimeout: 120_000,
